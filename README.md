@@ -1,0 +1,1 @@
+coffee-store-auth-client
