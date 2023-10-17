@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 const AddCoffee = () => {
@@ -36,6 +37,7 @@ const AddCoffee = () => {
     }
     return (
         <div className="card w-full min-h-screen shadow-2xl bg-[#F4F3F0]">
+            <Link to={'/'}><button className=' btn btn-outline m-5'>Back to home</button></Link>
             <form onSubmit={handleAddCoffee} className="card-body">
                 <p className=" text-center text-3xl font-bold ">Add New Coffee</p>
                 <div className=" flex gap-10">

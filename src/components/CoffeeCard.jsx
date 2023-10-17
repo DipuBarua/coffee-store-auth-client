@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const CoffeeCard = ({ coffee }) => {
-    const { _id, name, supplier, category, photo, chef, taste, details } = coffee;
+const CoffeeCard = ({ coffee, allCoffee, setAllCoffee }) => {
+    const { _id, name, category, photo, chef, taste } = coffee;
 
     const handleDelete = _id => {
         console.log('delete clicked', _id);
@@ -30,6 +31,8 @@ const CoffeeCard = ({ coffee }) => {
                                 'success'
                             )
                         }
+                        const remaining = allCoffee.filter(cof => cof._id !== _id);
+                        setAllCoffee(remaining);
                     })
             }
         })
@@ -48,7 +51,9 @@ const CoffeeCard = ({ coffee }) => {
                 <div className="card-actions justify-end mr-2">
                     <div className="btn-group btn-group-vertical space-y-2">
                         <button className="btn btn-active">View</button>
-                        <button className="btn btn-accent">Edit</button>
+                        <Link to={`updateCoffee/${_id}`}>
+                            <button className="btn btn-accent">Edit</button>
+                        </Link>
                         <button
                             onClick={() => handleDelete(_id)}
                             className="btn btn-error">X</button>
