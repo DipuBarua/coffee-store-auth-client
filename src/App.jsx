@@ -11,6 +11,7 @@ function App() {
     <div className=' m-20'>
       <p className=' text-center'> --- Sip & Savor --- </p>
       <h2 className=' text-center text-5xl font-bold my-2'>Starbucks Popular Products</h2>
+      <Link to={'/signUp'}><button className=' btn btn-ghost'>sign up</button></Link>
       <Link to={'/addCoffee'}><button className=' btn btn-ghost'>Add Coffee</button></Link>
       <div className='grid md:grid-cols-2 gap-10 mt-10'>
         {
